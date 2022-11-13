@@ -34,3 +34,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# frontend mentor
+.DS_Store
+.prettierignore
+*.xd
+*.sketch
+*.fig
