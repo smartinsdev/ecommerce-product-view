@@ -17,4 +17,32 @@
     @apply after:absolute after:w-0 after:h-1 after:bottom-0 after:bg-primary after:left-0
       after:rounded-sm after:transition-all after:duration-300 hover:after:w-full;
   }
+  .dropbox_animated--mobile {
+    animation: enterDropboxMobile 0.3s ease-out;
+  }
+
+  .dropbox_animated--desktop {
+    animation: enterDropboxDesktop 0.3s ease-out;
+  }
+
+  @keyframes enterDropboxMobile {
+    from {
+      transform: translateX(50%) scale(0.9) translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(50%) scale(1) translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes enterDropboxDesktop {
+    from {
+      transform: scale(0.9) translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+  }
 }
