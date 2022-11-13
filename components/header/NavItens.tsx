@@ -1,16 +1,17 @@
 import Link from "next/link";
 
 const itens = ["collections", "men", "women", "about", "contact"];
+type Props = {
+  classesContainer: string;
+  classesLink: string;
+};
 
-export function NavItens() {
+export function NavItens({ classesContainer, classesLink }: Props) {
   return (
-    <ul className="hidden md:flex items-center space-x-2">
+    <ul className={classesContainer}>
       {itens.map((item) => (
         <li key={item}>
-          <Link
-            href={`/${item}`}
-            className="py-7 px-1 block text-neutral-300 transition-colors duration-300 hover:text-neutral-400 relative nav-link"
-          >
+          <Link href={`/${item}`} className={classesLink}>
             {item}
           </Link>
         </li>

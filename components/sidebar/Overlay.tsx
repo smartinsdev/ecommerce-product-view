@@ -9,7 +9,7 @@ export function Overlay({ children }: Props) {
   const ctx = useContext(OpenMenuContext);
   return (
     <div
-      className={`min-h-screen z-10 absolute inset-0 bg-black/75 transition-all duration-300 ${
+      className={`min-h-screen z-10 absolute inset-0 bg-black/75 transition-all duration-300 md:hidden ${
         ctx?.openMenu ? "opacity-100 visible" : "opacity-0 invisible"
       }`}
     >

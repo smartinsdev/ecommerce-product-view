@@ -13,7 +13,10 @@ export function NavBar() {
       <div className="flex items-center space-x-4 md:space-x-0 md:gap-10">
         <ButtonMobile />
         <Logo />
-        <NavItens />
+        <NavItens
+          classesContainer="hidden md:flex items-center space-x-2"
+          classesLink="py-7 px-1 block capitalize text-sm text-neutral-300 transition-colors duration-300 hover:text-neutral-400 relative nav-link"
+        />
       </div>
       <div className="flex items-center justify-center space-x-4">
         <ButtonCart onClick={() => setOpenCart(!openCart)} />
