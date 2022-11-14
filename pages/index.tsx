@@ -1,6 +1,8 @@
 import Head from "next/head";
 import { useContext } from "react";
 import { Header } from "../components/header";
+import { Description } from "../components/sections/contents";
+import { Slider } from "../components/sections/slider";
 import { SideBar } from "../components/sidebar";
 import { OpenMenuContext } from "../context/openMenuContext";
 import { OpenMenuProvider } from "../providers/openMenuProvider";
@@ -26,6 +28,12 @@ export default function Home() {
         <OpenMenuProvider>
           <Header />
           <SideBar />
+          <main className="min-h-scree">
+            <section className="grid grid-cols-1 max-w-6xl mx-auto mt-0  md:mt-5 md:grid-cols-2">
+              <Slider />
+              <Description />
+            </section>
+          </main>
         </OpenMenuProvider>
       </div>
     </>
