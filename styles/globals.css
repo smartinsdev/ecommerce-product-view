@@ -45,4 +45,17 @@
       opacity: 1;
     }
   }
+
+  .fade-in img {
+    animation: fadeIn 0.5s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 }
