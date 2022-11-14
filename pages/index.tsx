@@ -28,7 +28,7 @@ export default function Home() {
         <OpenMenuProvider>
           <Header />
           <SideBar />
-          <main className="min-h-scree">
+          <main className="min-h-screen">
             <section className="grid grid-cols-1 max-w-6xl mx-auto mt-0  md:mt-5 md:grid-cols-2">
               <Slider />
               <Description />
