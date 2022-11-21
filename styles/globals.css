@@ -58,4 +58,27 @@
       opacity: 1;
     }
   }
+
+  .cbutton {
+    @apply relative p-2 text-primary bg-transparent transition-colors duration-300 rounded-md
+    hover:bg-primary hover:text-primary-pale;
+  }
+
+  .click--effect {
+    @apply active:animate-[anim-effect-boris_0.3s_forwards];
+  }
+
+  @keyframes anim-effect-boris {
+    0% {
+      transform: scale3d(0.3, 0.3, 1);
+    }
+    25%,
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: scale3d(1.2, 1.2, 1);
+    }
+  }
 }

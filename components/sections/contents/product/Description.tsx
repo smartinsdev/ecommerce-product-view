@@ -28,7 +28,7 @@ export function Description() {
       </div>
       <div className="flex flex-col gap-4 md:flex-row">
         <div className="w-full rounded-xl py-1 bg-neutral-100 flex items-center justify-between">
-          <button className="p-2 text-primary bg-transparent hover:bg-primary hover:text-primary-pale transition-colors duration-300 hover:rounded-md">
+          <button className="cbutton click--effect">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -45,7 +45,7 @@ export function Description() {
             </svg>
           </button>
           <span className="text-neutral-400 font-bold text-center">0</span>
-          <button className="p-2 text-primary bg-transparent hover:bg-primary hover:text-primary-pale transition-colors duration-300 hover:rounded-md">
+          <button className="cbutton click--effect">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -62,7 +62,7 @@ export function Description() {
             </svg>
           </button>
         </div>
-        <button className="w-full rounded-xl py-2 bg-primary text-primary-pale hover:bg-primary-pale hover:text-primary transition-colors duration-300 font-bold flex items-center justify-center gap-3">
+        <button className="w-full rounded-xl py-2 bg-primary text-primary-pale hover:bg-primary-pale hover:text-primary transition-colors duration-300 font-bold flex items-center justify-center gap-3 click--effect">
           <svg
             fillRule="nonzero"
             fill="currentColor"
