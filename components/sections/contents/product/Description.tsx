@@ -1,4 +1,16 @@
+import React, { EventHandler, useContext, useState } from "react";
+import { ProductCountContext } from "../../../../context/productCountContext";
+
 export function Description() {
+  const [count, setCount] = useState(0);
+  const ctx = useContext(ProductCountContext);
+
+  const handleAddToCart = (event: React.FormEvent) => {
+    event.preventDefault();
+    if (!count) return;
+    ctx?.setCount(count);
+  };
+
   return (
     <article className=" flex flex-col px-6 lg:px-6 xl:px-10 py-0 md:py-5 space-y-4 lg:space-y-7 lg:mt-6">
       <div className="space-y-3">
@@ -28,7 +40,11 @@ export function Description() {
       </div>
       <div className="flex flex-col gap-4 md:flex-row">
         <div className="w-full rounded-xl py-1 bg-neutral-100 flex items-center justify-between">
-          <button className="cbutton click--effect">
+          <button
+            className="cbutton click--effect disabled:opacity-60"
+            disabled={!count}
+            onClick={() => setCount(count - 1)}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -44,8 +60,13 @@ export function Description() {
               />
             </svg>
           </button>
-          <span className="text-neutral-400 font-bold text-center">0</span>
-          <button className="cbutton click--effect">
+          <span className="text-neutral-400 font-bold text-center">
+            {count}
+          </span>
+          <button
+            className="cbutton click--effect"
+            onClick={() => setCount(count + 1)}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -62,7 +83,10 @@ export function Description() {
             </svg>
           </button>
         </div>
-        <button className="w-full rounded-xl py-2 bg-primary text-primary-pale hover:bg-primary-pale hover:text-primary transition-colors duration-300 font-bold flex items-center justify-center gap-3 click--effect">
+        <button
+          onClick={handleAddToCart}
+          className="w-full rounded-xl py-2 bg-primary text-primary-pale hover:bg-primary-pale hover:text-primary transition-colors duration-300 font-bold flex items-center justify-center gap-3 click--effect"
+        >
           <svg
             fillRule="nonzero"
             fill="currentColor"
