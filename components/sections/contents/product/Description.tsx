@@ -1,12 +1,11 @@
-import React, { EventHandler, useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import { ProductCountContext } from "../../../../context/productCountContext";
 
 export function Description() {
   const [count, setCount] = useState(0);
   const ctx = useContext(ProductCountContext);
 
-  const handleAddToCart = (event: React.FormEvent) => {
-    event.preventDefault();
+  const handleAddToCart = () => {
     if (!count) return;
     ctx?.setCount(count);
   };
@@ -41,7 +40,7 @@ export function Description() {
       <div className="flex flex-col gap-4 md:flex-row">
         <div className="w-full rounded-xl py-1 bg-neutral-100 flex items-center justify-between">
           <button
-            className="cbutton click--effect disabled:opacity-60"
+            className="cbutton disabled:opacity-60"
             disabled={!count}
             onClick={() => setCount(count - 1)}
           >
@@ -63,10 +62,7 @@ export function Description() {
           <span className="text-neutral-400 font-bold text-center">
             {count}
           </span>
-          <button
-            className="cbutton click--effect"
-            onClick={() => setCount(count + 1)}
-          >
+          <button className="cbutton" onClick={() => setCount(count + 1)}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -85,7 +81,7 @@ export function Description() {
         </div>
         <button
           onClick={handleAddToCart}
-          className="w-full rounded-xl py-2 bg-primary text-primary-pale hover:bg-primary-pale hover:text-primary transition-colors duration-300 font-bold flex items-center justify-center gap-3 click--effect"
+          className="w-full rounded-xl py-2 bg-primary text-primary-pale hover:bg-primary-pale hover:text-primary transition-colors duration-300 font-bold flex items-center justify-center gap-3 focus:ring-2 focus:outline-none focus:ring-primary/70 active:bg-primary active:text-primary-pale"
         >
           <svg
             fillRule="nonzero"

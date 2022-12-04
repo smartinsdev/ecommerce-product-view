@@ -11,9 +11,6 @@ export function Slider() {
 
   useEffect(() => {
     slideRef.current?.addEventListener("animationend", removeAnimation);
-
-    return () =>
-      slideRef.current?.removeEventListener("animationend", removeAnimation);
   }, []);
 
   const removeAnimation = () => {
@@ -46,7 +43,7 @@ export function Slider() {
         <Image
           src={images[currentIndex].src}
           alt={images[currentIndex].alt}
-          className="max-w-full h-full w-full block object-cover object-center"
+          className="max-w-full h-full w-full block object-cover object-center cursor-pointer"
         />
         <div className="px-3 absolute top-1/2 -translate-y-1/2  w-full flex items-center justify-between md:hidden">
           <button
@@ -101,7 +98,7 @@ export function Slider() {
             <Image
               src={image.thumbnail}
               alt={image.alt}
-              className="w-full h-full max-w-full block object-cover"
+              className="w-full h-full max-w-full block object-cover cursor-pointer"
             />
           </li>
         ))}
